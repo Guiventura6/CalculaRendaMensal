@@ -44,8 +44,10 @@ namespace CalculaRendaMensal
             Console.WriteLine();
 
             Console.Write("Enter month and year to calculate income (MM/YYYY): ");
-            DateTime searchMonth = DateTime.Parse(Console.ReadLine());
-            double income =  worker.Income(searchMonth.Year, searchMonth.Month);
+            string monthAndYear = Console.ReadLine();
+            int month = int.Parse(monthAndYear.Substring(0, 2));
+            int year = int.Parse(monthAndYear.Substring(3));
+            double income =  worker.Income(year, month);
             
             Console.WriteLine($"Name: {worker.Name}");
             Console.WriteLine($"Department: {worker.Department}");
